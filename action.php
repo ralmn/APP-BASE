@@ -36,7 +36,7 @@ session_start(); // dfs
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href=""><b>Impressione</b>Bases</a>
+        <a href=""><b>Impression</b>Bases</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
             <p>Es tu sur de vouloir imprimer la base de :<?php echo htmlspecialchars($_POST['bases']); ?></p>

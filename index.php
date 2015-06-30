@@ -44,7 +44,7 @@ session_start(); // dfs
         <form action="action.php" method="POST">
             <select name="bases" id="bases">
               <option name="#">=== Les Bases Depussay ===</option>
-                       <a href="alluy.html"><option name="$alluy">- Alluy</option></a>
+                       <option name="$alluy">- Alluy</option>
                        <option name="$angerville">- Angerville</option>
                        <option name="$bazainville">- Bazainville</option>
                        <option name="$brionne">- Brionne</option>
