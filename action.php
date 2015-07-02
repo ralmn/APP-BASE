@@ -1,5 +1,7 @@
 <?php
 session_start(); // dfs
+$bases = str_replace("- ", "", $_POST["bases"]);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,25 +34,33 @@ session_start(); // dfs
 
 
     </style>
+
+    <script>
+      function printPDF(){
+        console.log(document.querySelector('#toPrint'));
+        document.querySelector('#toPrint').contentWindow.print();
+      }
+
+    </script>
+
   </head>
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href=""><b>Impression</b>Bases</a>
+        <a href=""><b>Impression</b> Bases</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-            <p>Es tu sur de vouloir imprimer la base de :<?php echo htmlspecialchars($_POST['bases']); ?></p>
+            <p>Es tu sur de vouloir imprimer la base de :<?php echo htmlspecialchars($bases); ?></p>
           <div class="row">
-            <div class="col-xs-8">    
-             <!-- <div class="checkbox icheck">
-                <label>
-                  <input type="checkbox" name="remember-me"> Se souvenir de moi
-                </label>
-              </div> -->                        
-            </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Imprimer</button>
+              <button class="btn btn-primary btn-block btn-flat" onclick="printPDF()">Imprimer</button>
             </div><!-- /.col -->
+            <div class="col-xs-12">
+              <iframe src="adresse base pdf/<?php echo strtoupper($bases); ?>.pdf" id="toPrint" name="toPrint">
+              </object>
+            </div>
+
+
           </div>
 
       </div><!-- /.login-box-body -->
